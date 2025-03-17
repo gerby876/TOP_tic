@@ -1,5 +1,8 @@
 const board = (function () {
     let gameboard = [[0,0,0], [0,0,0], [0,0,0]];
+
+    //Add turn function here that runs change and check win before changing the players turn.  This is what will make the game function.
+
     const change = (a, b, marker) => {
         if (marker == "X") {
             gameboard[a][b] = "X";
@@ -8,6 +11,9 @@ const board = (function () {
         };
         console.log(gameboard);
     };
+
+    //Add check win function to look for all three in a rows
+
     return {gameboard, change};
 })();
 
