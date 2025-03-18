@@ -1,7 +1,10 @@
 const board = (function () {
-    let gameboard = [[0,0,0], [0,0,0], [0,0,0]];
+    let gameboard = [[1,2,3], [4,5,6], [7,8,9]];
 
-    //Add turn function here that runs change and check win before changing the players turn.  This is what will make the game function.
+    const turn = (a, b, marker) => {
+        change(a, b, marker);
+        checkWin()
+    }
 
     const change = (a, b, marker) => {
         if (marker == "X") {
@@ -9,12 +12,29 @@ const board = (function () {
         } else {
             gameboard[a][b] = "O";
         };
-        console.log(gameboard);
     };
 
-    //Add check win function to look for all three in a rows
+    const checkWin = () => {
+        // for (let i=0; i<3; i++) {
+        //     for (let x=0; x<3; x++) {
+        //         console.log(gameboard[i][x])
+        //     };
+        // };
 
-    return {gameboard, change};
+        if(gameboard[0][0] == gameboard[0][1] && gameboard[0][0] == gameboard[0][2] ||
+            gameboard[1][0] == gameboard[1][1] && gameboard[1][0] == gameboard[1][2] ||
+            gameboard[2][0] == gameboard[2][1] && gameboard[2][0] == gameboard[2][2] ||
+            gameboard[0][0] == gameboard[1][0] && gameboard[0][0] == gameboard[2][0] ||
+            gameboard[0][1] == gameboard[1][1] && gameboard[0][1] == gameboard[2][1] ||
+            gameboard[0][2] == gameboard[1][2] && gameboard[0][2] == gameboard[2][2] ||
+            gameboard[0][0] == gameboard[1][1] && gameboard[0][0] == gameboard[2][2] ||
+            gameboard[0][2] == gameboard[1][1] && gameboard[0][2] == gameboard[2][0] 
+        ) {
+            alert("You win")
+        };
+    };
+
+    return {gameboard, turn};
 })();
 
 function createPlayer (name, num) {
@@ -36,6 +56,10 @@ const dog = createPlayer ("Roma", "2");
 console.log(me)
 console.log(dog)
 
-board.change(2, 1, me.marker)
-board.change(2, 2, dog.marker)
+
+board.turn(0, 2, me.marker)
+board.turn(1, 1, me.marker)
+board.turn(2, 0, me.marker)
+
+console.log(board.gameboard)
 
