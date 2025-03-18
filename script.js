@@ -1,5 +1,5 @@
 const board = (function () {
-    let gameboard = [[1,2,3], [4,5,6], [7,8,9]];
+    gameboard = [[1,2,3], [4,5,6], [7,8,9]];
     t=0;
     gameend = 0;
     active = 1;
@@ -58,9 +58,18 @@ const board = (function () {
         } else {
             active = 1;
         };
-    }
+    };
 
-    return {gameboard, turn};
+    const newGame = () => {
+        gameboard=[[1,2,3],[4,5,6],[7,8,9]];
+        t=0;
+        gameend=0;
+        active=1;
+        score1=0;
+        score2=0;
+    };
+
+    return {gameboard, turn, newGame};
 })();
 
 function createPlayer (name, num) {
