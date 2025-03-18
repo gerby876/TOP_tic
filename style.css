@@ -10,14 +10,40 @@ body {
     grid-template-rows: 1fr 5fr 1fr;
 }
 
-
+.oborder{
+    border: solid;
+    border-color: #303030;
+    border-width: 2px;
+}
 
 .display{
     grid-column: span 2;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em;
+}
+
+.vs{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-style: italic;
+    
 }
 
 .score{
     grid-row: span 2;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30em;
 }
 
 .board{
@@ -29,6 +55,36 @@ body {
 
 .game{
     background-color: white;
+    border-color: #000000;
+}
+
+.input{
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#p1{
+    width: 95%;
+}
+
+#p2{
+    width: 95%;
+}
+
+.bmiddle{
+    display: grid;
+    grid-auto-rows: 1fr;
+}
+
+.submit{
+    font-size: 2em;
+    background-color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .top{
@@ -46,3 +102,8 @@ body {
 .right{
     border-right: none;
 }
+
+.corner{
+    border: none;
+}
+

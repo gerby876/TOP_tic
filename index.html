@@ -8,25 +8,35 @@
 </head>
 <body>
     <div class="container">
-        <div class="display" id="player1">Player 1</div>
-        <div>VS</div>
-        <div class="display" id="player 2">Player 2</div>
-        <div class="score" id="player1">Score 1</div>
+        <div class="oborder display top left" id="player1">Player 1</div>
+        <div class="oborder vs top">VS</div>
+        <div class="oborder display top right" id="player 2">Player 2</div>
+        <div class="oborder score bottom left" id="player1"> 0 </div>
         <div class="board">
-            <button class="game left top">1</button>
-            <button class="game top">2</button>
-            <button class="game top right">3</button>
-            <button class="game left">4</button>
+            <button class="game corner">1</button>
+            <button class="game top bottom">2</button>
+            <button class="game corner">3</button>
+            <button class="game left right">4</button>
             <button class="game">5</button>
-            <button class="game right">6</button>
-            <button class="game bottom left">7</button>
-            <button class="game bottom">8</button>
-            <button class="game bottom right">9</button>
+            <button class="game left right">6</button>
+            <button class="game corner">7</button>
+            <button class="game top bottom">8</button>
+            <button class="game corner">9</button>
         </div>
-        <div class="score" id="player2">Score 2</div>
-        <div class="input" id="player1">Player 1 input</div>
-        <div>New game and submit</div>
-        <div class="input" id="player2">Score 2</div>
+        <div class="oborder score bottom right" id="player2">0</div>
+        <div class="oborder input bottom right left" id="player1">
+            <div> Player 1</div>
+            <input class="input" id="p1" type="text">
+        </div>
+        <div class="oborder bottom bmiddle">
+            <button class="submit">Submit Players</button>
+            <button class="submit">New Game</button>
+            <button class="submit">New Match</button>
+        </div>
+        <div class="oborder input bottom right left" id="player2">
+            <div> Player 2</div>
+            <input class="input" id="p2" type="text">
+        </div>
     </div>
     <script src="script.js">
 
