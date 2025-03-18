@@ -1,13 +1,23 @@
 const board = (function () {
     let gameboard = [[1,2,3], [4,5,6], [7,8,9]];
+    t=0;
+    gameend = 0;
+    active = 1;
+    score1 = 0;
+    score2 = 0;
 
-    const turn = (a, b, marker) => {
-        change(a, b, marker);
-        checkWin()
+    const turn = (a, b) => {
+        change(a, b);
+        t++;
+        checkWin();
+        if (gameend === 1) {
+            return;
+        };
+        nextPlayer();
     }
 
-    const change = (a, b, marker) => {
-        if (marker == "X") {
+    const change = (a, b) => {
+        if (active == 1) {
             gameboard[a][b] = "X";
         } else {
             gameboard[a][b] = "O";
@@ -30,24 +40,32 @@ const board = (function () {
             gameboard[0][0] == gameboard[1][1] && gameboard[0][0] == gameboard[2][2] ||
             gameboard[0][2] == gameboard[1][1] && gameboard[0][2] == gameboard[2][0] 
         ) {
-            alert("You win")
+            if (active == 1) {
+                score1++;
+            } else {
+                score2++;
+            }
+            gameend = 1;
+            console.log(score1);
+            console.log(score2);
+            return(gameend);
         };
     };
+
+    const nextPlayer = () => {
+        if (active == 1) {
+            active = 2;
+        } else {
+            active = 1;
+        };
+    }
 
     return {gameboard, turn};
 })();
 
 function createPlayer (name, num) {
     const playerNumber = "Player " + num;
-    let marker = "";
-    const checkMarker = (function(num) {
-        if (num == 1) {
-            marker = "X";
-        } else {
-            marker = "O";
-        }
-    })(num);
-    return {name, playerNumber, marker};
+    return {name, playerNumber};
 };
 
 const me = createPlayer ("Me", "1");
@@ -57,9 +75,11 @@ console.log(me)
 console.log(dog)
 
 
-board.turn(0, 2, me.marker)
-board.turn(1, 1, me.marker)
-board.turn(2, 0, me.marker)
+board.turn(0, 2)
+board.turn(1, 2)
+board.turn(2, 0)
+board.turn(1, 0)
+board.turn(1, 1)
 
 console.log(board.gameboard)
 
