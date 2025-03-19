@@ -77,7 +77,7 @@ const board = (function () {
         score2 = 0
     };
 
-    return {gameend, turn, newGame, newMatch};
+    return {turn, newGame, newMatch};
 })();
 
 
@@ -107,15 +107,19 @@ const display = (function() {
 
     };
 
-    players = document.querySelector(".players");
+    const players = document.querySelector(".players");
     players.addEventListener("click", () => {
         createPlayer();
         updateDisplay();
+        for (let i=0; i<bgame.length; i++) {
+            bgame[i].textContent = ""
+        };
+        newMatch();
     });
 
-    bgame = document.getElementsByClassName("game");
+    const bgame = document.getElementsByClassName("game");
 
-    newGame = document.querySelector(".ngame");
+    const newGame = document.querySelector(".ngame");
     newGame.addEventListener("click", () => {
         board.newGame();
         for (let i=0; i<bgame.length; i++) {
@@ -124,7 +128,7 @@ const display = (function() {
         active = 1;
     });
 
-    newMatch = document.querySelector(".nmatch");
+    const newMatch = document.querySelector(".nmatch");
     newMatch.addEventListener("click", () => {
         board.newMatch();
         for (let i=0; i<bgame.length; i++) {
@@ -133,8 +137,12 @@ const display = (function() {
         active = 1;
     })
 
-    b1 = document.querySelector(".b1");
+    const b1 = document.querySelector(".b1");
     b1.addEventListener("click", () => {
+        if (b1.textContent == "X" || b1.textContent == "O")
+        {
+            return
+        };
         if (active == 1) {
             b1.textContent="X"
             active = 2
@@ -145,8 +153,12 @@ const display = (function() {
         board.turn(0,0);
     });
     
-    b2 = document.querySelector(".b2");
+    const b2 = document.querySelector(".b2");
     b2.addEventListener("click", () => {
+        if (b2.textContent == "X" || b2.textContent == "O")
+            {
+                return
+            };
         if (active == 1) {
             b2.textContent="X"
             active = 2
@@ -157,8 +169,12 @@ const display = (function() {
         board.turn(0,1);
     });
 
-    b3 = document.querySelector(".b3");
+    const b3 = document.querySelector(".b3");
     b3.addEventListener("click", () => {
+        if (b3.textContent == "X" || b3.textContent == "O")
+            {
+                return
+            };
         if (active == 1) {
             b3.textContent="X"
             active = 2
@@ -169,8 +185,12 @@ const display = (function() {
         board.turn(0,2);
     });
 
-    b4 = document.querySelector(".b4");
+    const b4 = document.querySelector(".b4");
     b4.addEventListener("click", () => {
+        if (b4.textContent == "X" || b4.textContent == "O")
+            {
+                return
+            };
         if (active == 1) {
             b4.textContent="X"
             active = 2
@@ -181,8 +201,12 @@ const display = (function() {
         board.turn(1,0);
     });
 
-    b5 = document.querySelector(".b5");
+    const b5 = document.querySelector(".b5");
     b5.addEventListener("click", () => {
+        if (b5.textContent == "X" || b5.textContent == "O")
+            {
+                return
+            };
         if (active == 1) {
             b5.textContent="X"
             active = 2
@@ -193,8 +217,12 @@ const display = (function() {
         board.turn(1,1);
     });
 
-    b6 = document.querySelector(".b6");
+    const b6 = document.querySelector(".b6");
     b6.addEventListener("click", () => {
+        if (b6.textContent == "X" || b6.textContent == "O")
+            {
+                return
+            };
         if (active == 1) {
             b6.textContent="X"
             active = 2
@@ -205,8 +233,12 @@ const display = (function() {
         board.turn(1,2);
     });
 
-    b7 = document.querySelector(".b7");
+    const b7 = document.querySelector(".b7");
     b7.addEventListener("click", () => {
+        if (b7.textContent == "X" || b7.textContent == "O")
+            {
+                return
+            };
         if (active == 1) {
             b7.textContent="X"
             active = 2
@@ -217,8 +249,12 @@ const display = (function() {
         board.turn(2,0);
     });
 
-    b8 = document.querySelector(".b8");
+    const b8 = document.querySelector(".b8");
     b8.addEventListener("click", () => {
+        if (b8.textContent == "X" || b8.textContent == "O")
+            {
+                return
+            };
         if (active == 1) {
             b8.textContent="X"
             active = 2
@@ -229,8 +265,12 @@ const display = (function() {
         board.turn(2,1);
     });
 
-    b9 = document.querySelector(".b9");
+    const b9 = document.querySelector(".b9");
     b9.addEventListener("click", () => {
+        if (b9.textContent == "X" || b9.textContent == "O")
+            {
+                return
+            };
         if (active == 1) {
             b9.textContent="X"
             active = 2
