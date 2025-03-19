@@ -46,8 +46,7 @@ const board = (function () {
             } else {
                 score2++;
             }
-            console.log(score1);
-            console.log(score2);
+            display.updateScore(score1, score2)
             gameend = 1;
         };
     };
@@ -75,6 +74,7 @@ const board = (function () {
         active=1;
         score1 = 0
         score2 = 0
+        display.updateScore(score1, score2)
     };
 
     return {turn, newGame, newMatch};
@@ -281,7 +281,17 @@ const display = (function() {
         board.turn(2,2);
     });
 
-    return {}
+    const s1 = document.getElementById("score1")
+    const s2 = document.getElementById("score2")
+
+    const updateScore = (score1, score2) => {
+        const s1 = document.getElementById("score1")
+        const s2 = document.getElementById("score2")
+        s1.textContent = score1;
+        s2.textContent = score2;
+    }
+
+    return {updateScore}
 })();
 
 
