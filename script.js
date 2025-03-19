@@ -114,7 +114,7 @@ const display = (function() {
         for (let i=0; i<bgame.length; i++) {
             bgame[i].textContent = ""
         };
-        newMatch();
+        board.newMatch();
     });
 
     const bgame = document.getElementsByClassName("game");
