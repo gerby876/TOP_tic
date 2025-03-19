@@ -11,7 +11,8 @@ const board = (function () {
         t++;
         checkWin();
         if (gameend === 1) {
-            return{};
+            display.winLose(active, document.getElementById("player1").textContent, document.getElementById("player2").textContent);
+            return
         };
         nextPlayer();
     }
@@ -114,6 +115,7 @@ const display = (function() {
         for (let i=0; i<bgame.length; i++) {
             bgame[i].textContent = ""
         };
+        document.getElementById("vs").textContent = "VS"
         board.newMatch();
     });
 
@@ -125,6 +127,7 @@ const display = (function() {
         for (let i=0; i<bgame.length; i++) {
             bgame[i].textContent = ""
         };
+        document.getElementById("vs").textContent = "VS"
         active = 1;
     });
 
@@ -134,6 +137,7 @@ const display = (function() {
         for (let i=0; i<bgame.length; i++) {
             bgame[i].textContent = ""
         }
+        document.getElementById("vs").textContent = "VS"
         active = 1;
     })
 
@@ -281,9 +285,6 @@ const display = (function() {
         board.turn(2,2);
     });
 
-    const s1 = document.getElementById("score1")
-    const s2 = document.getElementById("score2")
-
     const updateScore = (score1, score2) => {
         const s1 = document.getElementById("score1")
         const s2 = document.getElementById("score2")
@@ -291,7 +292,16 @@ const display = (function() {
         s2.textContent = score2;
     }
 
-    return {updateScore}
+    const winLose = (active, name1, name2) => {
+        const vs = document.querySelector("#vs");
+        if (active == 1) {
+            vs.textContent = name1 + " WINS!"
+        } else {
+            vs.textContent = name2 + " WINS!"
+        }
+    }
+
+    return {updateScore, winLose}
 })();
 
 

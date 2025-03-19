@@ -27,7 +27,7 @@ body {
     font-size: 6em;
 }
 
-.vs{
+#vs{
     display: flex;
     flex: 1;
     justify-content: center;
