@@ -106,3 +106,10 @@ body {
     border: none;
 }
 
+#player1{
+    background-color: #D3AE36;
+}
+
+#player2{
+    background-color: #A6A6A6;
+}

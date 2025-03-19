@@ -117,6 +117,7 @@ const display = (function() {
         updateDisplay();
         for (let i=0; i<bgame.length; i++) {
             bgame[i].textContent = ""
+            bgame[i].removeAttribute("id");
         };
         document.getElementById("vs").textContent = "VS"
         document.getElementById("vs").style.fontSize = "5em"
@@ -133,7 +134,8 @@ const display = (function() {
     newGame.addEventListener("click", () => {
         board.newGame();
         for (let i=0; i<bgame.length; i++) {
-            bgame[i].textContent = ""
+            bgame[i].textContent = "";
+            bgame[i].removeAttribute("id");
         };
         document.getElementById("vs").textContent = "VS";
         document.getElementById("vs").style.fontSize = "5em";
@@ -145,8 +147,9 @@ const display = (function() {
     newMatch.addEventListener("click", () => {
         board.newMatch();
         for (let i=0; i<bgame.length; i++) {
-            bgame[i].textContent = ""
-        }
+            bgame[i].textContent = "";
+            bgame[i].removeAttribute("id");
+        };
         document.getElementById("vs").textContent = "VS"
         document.getElementById("vs").style.fontSize = "5em"
         document.getElementById("score1").style.fontSize = "30em";
@@ -164,9 +167,11 @@ const display = (function() {
         if (active == 1) {
             b1.textContent="X"
             active = 2
+            b1.id = "player1"
         } else {
             b1.textContent="O"
             active = 1
+            b1.id = "player2"
         };
         board.turn(0,0);
     });
@@ -180,9 +185,11 @@ const display = (function() {
         if (active == 1) {
             b2.textContent="X"
             active = 2
+            b2.id = "player1"
         } else {
             b2.textContent="O"
             active = 1
+            b2.id = "player2"
         };
         board.turn(0,1);
     });
@@ -196,9 +203,11 @@ const display = (function() {
         if (active == 1) {
             b3.textContent="X"
             active = 2
+            b3.id = "player1"
         } else {
             b3.textContent="O"
             active = 1
+            b3.id = "player2"
         };
         board.turn(0,2);
     });
@@ -212,9 +221,11 @@ const display = (function() {
         if (active == 1) {
             b4.textContent="X"
             active = 2
+            b4.id = "player1"
         } else {
             b4.textContent="O"
             active = 1
+            b4.id = "player2"
         };
         board.turn(1,0);
     });
@@ -228,9 +239,11 @@ const display = (function() {
         if (active == 1) {
             b5.textContent="X"
             active = 2
+            b5.id = "player1"
         } else {
             b5.textContent="O"
             active = 1
+            b5.id = "player2"
         };
         board.turn(1,1);
     });
@@ -244,9 +257,11 @@ const display = (function() {
         if (active == 1) {
             b6.textContent="X"
             active = 2
+            b6.id = "player1"
         } else {
             b6.textContent="O"
             active = 1
+            b6.id = "player2"
         };
         board.turn(1,2);
     });
@@ -260,9 +275,11 @@ const display = (function() {
         if (active == 1) {
             b7.textContent="X"
             active = 2
+            b7.id = "player1"
         } else {
             b7.textContent="O"
             active = 1
+            b7.id = "player2"
         };
         board.turn(2,0);
     });
@@ -276,9 +293,11 @@ const display = (function() {
         if (active == 1) {
             b8.textContent="X"
             active = 2
+            b8.id = "player1"
         } else {
             b8.textContent="O"
             active = 1
+            b8.id = "player2"
         };
         board.turn(2,1);
     });
@@ -292,9 +311,11 @@ const display = (function() {
         if (active == 1) {
             b9.textContent="X"
             active = 2
+            b9.id = "player1"
         } else {
             b9.textContent="O"
             active = 1
+            b9.id = "player2"
         };
         board.turn(2,2);
     });
