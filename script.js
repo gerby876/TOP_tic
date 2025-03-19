@@ -112,6 +112,7 @@ const display = (function() {
     };
 
     const players = document.querySelector(".players");
+
     players.addEventListener("click", () => {
         createPlayer();
         updateDisplay();
@@ -119,8 +120,9 @@ const display = (function() {
             bgame[i].textContent = ""
             bgame[i].removeAttribute("id");
         };
-        document.getElementById("vs").textContent = "VS"
-        document.getElementById("vs").style.fontSize = "5em"
+        document.getElementById("vs").textContent = "VS";
+        document.getElementById("vs").style.fontSize = "5em";
+        document.getElementById("vs").style.backgroundColor = "";
         document.getElementById("score1").style.fontSize = "30em";
         document.getElementById("score2").style.fontSize = "30em";
         board.newMatch();
@@ -139,6 +141,7 @@ const display = (function() {
         };
         document.getElementById("vs").textContent = "VS";
         document.getElementById("vs").style.fontSize = "5em";
+        document.getElementById("vs").style.backgroundColor = "";
         active = 1;
         gameend = 0;
     });
@@ -152,6 +155,7 @@ const display = (function() {
         };
         document.getElementById("vs").textContent = "VS"
         document.getElementById("vs").style.fontSize = "5em"
+        document.getElementById("vs").style.backgroundColor = "";
         document.getElementById("score1").style.fontSize = "30em";
         document.getElementById("score2").style.fontSize = "30em";
         active = 1;
@@ -337,8 +341,10 @@ const display = (function() {
         const vs = document.querySelector("#vs");
         if (active == 1) {
             vs.textContent = name1 + " WINS!"
+            vs.style.backgroundColor =" #D3AE36";
         } else {
             vs.textContent = name2 + " WINS!"
+            vs.style.backgroundColor =" #A6A6A6";
         };
         vs.style.fontSize = "3em"
         gameend = 1;

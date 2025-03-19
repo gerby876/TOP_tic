@@ -109,7 +109,13 @@ body {
 #player1{
     background-color: #D3AE36;
 }
+#score1{
+    background-color: #D3AE36;
+}
 
 #player2{
+    background-color: #A6A6A6;
+}
+#score2{
     background-color: #A6A6A6;
 }
