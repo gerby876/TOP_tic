@@ -88,6 +88,7 @@ const board = (function () {
 const display = (function() {
     let active = 1;
     let gameend = 0;
+    let start = 0;
 
     const createPlayer = () => {
         if (document.getElementById("p1") !== "") {
@@ -128,6 +129,7 @@ const display = (function() {
         board.newMatch();
         active = 1;
         gameend = 0;
+        start = 1;
     });
 
     const bgame = document.getElementsByClassName("game");
@@ -144,6 +146,7 @@ const display = (function() {
         document.getElementById("vs").style.backgroundColor = "";
         active = 1;
         gameend = 0;
+        start = 1;
     });
 
     const newMatch = document.querySelector(".nmatch");
@@ -160,11 +163,12 @@ const display = (function() {
         document.getElementById("score2").style.fontSize = "30em";
         active = 1;
         gameend = 0;
+        start = 1;
     })
 
     const b1 = document.querySelector(".b1");
     b1.addEventListener("click", () => {
-        if (b1.textContent == "X" || b1.textContent == "O" || gameend == 1)
+        if (b1.textContent == "X" || b1.textContent == "O" || gameend == 1 || start == 0)
         {
             return
         };
@@ -182,7 +186,7 @@ const display = (function() {
     
     const b2 = document.querySelector(".b2");
     b2.addEventListener("click", () => {
-        if (b2.textContent == "X" || b2.textContent == "O" || gameend == 1)
+        if (b2.textContent == "X" || b2.textContent == "O" || gameend == 1 || start == 0)
             {
                 return
             };
@@ -200,7 +204,7 @@ const display = (function() {
 
     const b3 = document.querySelector(".b3");
     b3.addEventListener("click", () => {
-        if (b3.textContent == "X" || b3.textContent == "O" || gameend == 1)
+        if (b3.textContent == "X" || b3.textContent == "O" || gameend == 1 || start == 0)
             {
                 return
             };
@@ -218,7 +222,7 @@ const display = (function() {
 
     const b4 = document.querySelector(".b4");
     b4.addEventListener("click", () => {
-        if (b4.textContent == "X" || b4.textContent == "O" || gameend == 1)
+        if (b4.textContent == "X" || b4.textContent == "O" || gameend == 1 || start == 0) 
             {
                 return
             };
@@ -236,7 +240,7 @@ const display = (function() {
 
     const b5 = document.querySelector(".b5");
     b5.addEventListener("click", () => {
-        if (b5.textContent == "X" || b5.textContent == "O" || gameend == 1)
+        if (b5.textContent == "X" || b5.textContent == "O" || gameend == 1 || start == 0)
             {
                 return
             };
@@ -254,7 +258,7 @@ const display = (function() {
 
     const b6 = document.querySelector(".b6");
     b6.addEventListener("click", () => {
-        if (b6.textContent == "X" || b6.textContent == "O" || gameend == 1)
+        if (b6.textContent == "X" || b6.textContent == "O" || gameend == 1 || start == 0)
             {
                 return
             };
@@ -272,7 +276,7 @@ const display = (function() {
 
     const b7 = document.querySelector(".b7");
     b7.addEventListener("click", () => {
-        if (b7.textContent == "X" || b7.textContent == "O" || gameend == 1)
+        if (b7.textContent == "X" || b7.textContent == "O" || gameend == 1 || start == 0)
             {
                 return
             };
@@ -290,7 +294,7 @@ const display = (function() {
 
     const b8 = document.querySelector(".b8");
     b8.addEventListener("click", () => {
-        if (b8.textContent == "X" || b8.textContent == "O" || gameend == 1)
+        if (b8.textContent == "X" || b8.textContent == "O" || gameend == 1 || start == 0)
             {
                 return
             };
@@ -308,7 +312,7 @@ const display = (function() {
 
     const b9 = document.querySelector(".b9");
     b9.addEventListener("click", () => {
-        if (b9.textContent == "X" || b9.textContent == "O" || gameend == 1)
+        if (b9.textContent == "X" || b9.textContent == "O" || gameend == 1 || start == 0)
             {
                 return
             };
